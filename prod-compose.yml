@@ -1,0 +1,15 @@
+services:
+  web:
+    image: nginx:stable
+    container_name: home_page
+    expose:
+      - "80"
+    volumes:
+      - ./html:/var/www/html
+      - ./conf.d:/etc/nginx/conf.d
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true

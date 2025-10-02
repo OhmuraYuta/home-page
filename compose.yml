@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:stable
+    container_name: home_page
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./conf.d:/etc/nginx/conf.d
